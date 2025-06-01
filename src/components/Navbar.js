@@ -12,14 +12,12 @@ export default function Navbar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/about">{props.aboutText}</Link>
         </li>
       </ul>
-      {/* <button type="button" className="btn btn-primary mx-2" onClick={props.changeBlue} >Blue</button>
-      <button type="button" className="btn btn-primary mx-3" onClick={props.changePink} >Pink</button> */}
         <div className={`form-check form-switch  text-${props.mode==='light' ? 'dark' : 'light'}`}>
   <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={props.toggleMode} />
   <label className="form-check-label" htmlFor="switchCheckDefault">Enable Dark Mode</label>
