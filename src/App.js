@@ -8,8 +8,7 @@ import { useState } from 'react';
 import {
  BrowserRouter as Router, 
  Routes,
- Route,
- Link
+ Route
 } from "react-router-dom";
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
 
 const [mode, setMode] = useState('light'); 
 const [alert, setalert] = useState(null);
-const [color, setcolor] = useState('white');
+// const [color, setcolor] = useState('white');
 
 
 const  toggleMode=()=>{
@@ -48,17 +47,17 @@ setalert(null);
 },1500);
 }
 
-const changeBlue=(r)=>{
-  setcolor('blue');
-  document.body.style.backgroundColor='blue';
-  showAlert("Blue Mode has been enabled.","success");
-}
+// const changeBlue=()=>{
+//   setcolor('blue');
+//   document.body.style.backgroundColor='blue';
+//   showAlert("Blue Mode has been enabled.","success");
+// }
 
-const changePink=()=>{
-    setcolor('pink');
-    document.body.style.backgroundColor='pink';
-    showAlert("Pink mode has been enabled.","success");
-}
+// const changePink=()=>{
+//     setcolor('pink');
+//     document.body.style.backgroundColor='pink';
+//     showAlert("Pink mode has been enabled.","success");
+// }
 
   return (
     <>
@@ -66,13 +65,13 @@ const changePink=()=>{
       Object
     }/>  */}
     <Router>
-    <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} changeBlue={changeBlue} changePink={changePink}  showAlert={showAlert} color={color}/> 
+    <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode}  showAlert={showAlert} /> 
     <Alert alert={alert} />
     <div className="container">
     <Routes>
           
-          <Route path="/" element={<TextForm value="Enter your text here" showAlert={showAlert} btn1="Convert to Uppercase" btn2="Convert to Lowercase" mode={mode}/>} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<TextForm value="Try TextUtils-Word Counter | LowerCase to Uppercase | UpperCase to LowerCase" showAlert={showAlert} btn1="Convert to Uppercase" btn2="Convert to Lowercase" mode={mode}/>} />
+          <Route path="/about" element={<About  mode={mode}/>} />
 
           </Routes>
     </div>

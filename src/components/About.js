@@ -1,28 +1,9 @@
-import React,{useState} from 'react'
 
-export default function About() {
-    const [myStyle,setmyStyle] = useState({
-        backgroundColor:'white',
-        color:'black'
-    }
-)
-const [btnText, setbtnText] = useState("Enable Dark Mode")
-const ToggleClick=()=>{
-if(myStyle.color==='black'){
-    setmyStyle({
-        backgroundColor:'black',
-        color:'white', 
-        border:'1px solid white'
-    })
-    setbtnText("Enable Light Mode")
-}
-else {
-setmyStyle({
-    backgroundColor:'white',
-        color:'black'
-})
-setbtnText("Enable Dark Mode")
-}
+export default function About(props) {
+
+const myStyle={
+backgroundColor: props.mode==='dark'?'grey':'white',
+color:props.mode==='dark'?'white':'black',
 }
   return (
     <div className="container my-5" style={myStyle}>
@@ -31,7 +12,7 @@ setbtnText("Enable Dark Mode")
                 <div className="accordion-item" >
                     <h2 className="accordion-header">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse" style={myStyle} data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
+                        Analyse your text 
                     </button>
                     </h2>
                     <div id="collapseOne" style={myStyle} className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -43,7 +24,7 @@ setbtnText("Enable Dark Mode")
                 <div className="accordion-item" >
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
+                        Free to Use 
                     </button>
                     </h2>
                     <div id="collapseTwo" style={myStyle} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -55,7 +36,7 @@ setbtnText("Enable Dark Mode")
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed"  style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
+                        User Friendly 
                     </button>
                     </h2>
                     <div id="collapseThree" style={myStyle} className="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -65,7 +46,6 @@ setbtnText("Enable Dark Mode")
                     </div>
                 </div>
                 </div>
-                <button className="btn btn-primary my-3" onClick={ToggleClick}>{btnText}</button>
     </div>
   )
 }

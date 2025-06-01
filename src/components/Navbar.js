@@ -18,8 +18,8 @@ export default function Navbar(props) {
           <Link className="nav-link" to="/about">{props.aboutText}</Link>
         </li>
       </ul>
-      <button type="button" className="btn btn-primary mx-2" onClick={props.changeBlue} >Blue</button>
-      <button type="button" className="btn btn-primary mx-3" onClick={props.changePink} >Pink</button>
+      {/* <button type="button" className="btn btn-primary mx-2" onClick={props.changeBlue} >Blue</button>
+      <button type="button" className="btn btn-primary mx-3" onClick={props.changePink} >Pink</button> */}
         <div className={`form-check form-switch  text-${props.mode==='light' ? 'dark' : 'light'}`}>
   <input className="form-check-input" type="checkbox" role="switch" id="switchCheckDefault" onClick={props.toggleMode} />
   <label className="form-check-label" htmlFor="switchCheckDefault">Enable Dark Mode</label>
